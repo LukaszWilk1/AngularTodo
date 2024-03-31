@@ -1,3 +1,18 @@
 <p class="mt-4">Dodaj nowe zadanie</p>
 <input #todoInput type="text" class="form-control" name="todo">
 <button class="btn btn-primary mt-3" (click)="addTodo(todoInput.value)">Dodaj zadanie</button>
+<div class="mt-5">
+    <h4>Zadania:</h4>
+    <ul *ngIf="todos.length>0; else noTasks" class="list-group todos-list">
+        <li class="list-group-item" *ngFor="let todo of todos; index as i">
+            <input 
+                type="checkbox" 
+                class="form-check-input my-1"
+                [checked]="todo.isComplete"
+                (change)="changeStatus(i)"
+            >
+            <span class="todo-item">{{i+1}}. {{todo.name}}</span>
+        </li>
+    </ul>
+    <ng-template #noTasks>Aktualnie brak zadań</ng-template>
+</div>
