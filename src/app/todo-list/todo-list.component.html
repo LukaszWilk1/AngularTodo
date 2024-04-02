@@ -2,10 +2,7 @@
 <input #todoInput type="text" class="form-control" name="todo">
 <button class="btn btn-primary mt-3" (click)="addTodo(todoInput.value)">Dodaj zadanie</button>
 
-<div class="alert alert-warning alert-dismissible fade show mt-2" role="alert" *ngIf="errorMesage">
-    {{errorMesage}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="clearErrorMessage()"></button>
-</div>
+<app-alert *ngIf="errorMessage" [errorMessage]="errorMessage"></app-alert>
 
 <div class="mt-5">
     <h4>Zadania:</h4>
