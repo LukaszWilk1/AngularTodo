@@ -4,7 +4,7 @@ import { Todo } from '../shared/interfaces/todo.interface';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrl: './todo-list.component.css'
+  styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
   todos: Todo[] = [];
@@ -20,10 +20,6 @@ export class TodoListComponent {
       this.todos.push({name: usersTodo, isComplete: false});
       console.log("Aktualna lista todo: ", this.todos);
     }
-  }
-
-  changeStatus(index: number): void{
-    this.todos[index].isComplete = !this.todos[index].isComplete;
   }
 
   clearErrorMessage(){
