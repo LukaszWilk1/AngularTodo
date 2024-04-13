@@ -1,0 +1,32 @@
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.modal-wrapper{
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 640px;
+    max-width: 90%;
+    min-height: 15vh;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.close-btn{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+}

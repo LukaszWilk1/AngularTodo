@@ -9,8 +9,13 @@ import { Todo } from '../../shared/interfaces/todo.interface';
 export class TodoComponent {
   @Input() todo!: Todo;
   @Input() i!: number;
+  openModal = false;
 
   changeStatus(todo: Todo): void{
     todo.isComplete = !todo.isComplete;
+  }
+
+  toggleModal(): void{
+    this.openModal = !this.openModal;
   }
 }

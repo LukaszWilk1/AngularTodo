@@ -6,4 +6,8 @@
         (change)="changeStatus(todo)"
     >
     <span class="todo-item" [ngClass]="{'text-grey' : todo.isComplete}" [ngStyle]="{'text-decoration': todo.isComplete ? 'line-through' : 'initial'}">{{i+1}}. {{todo.name}}</span>
+
+    <button type="button" class="btn btn-danger btn-sm mx-2" (click)="toggleModal()">Delete</button>
 </li>
+
+<app-modal *ngIf="openModal" [title]="'Are you sure you want to delete task: ' + (i+1) + '?'" (close)="toggleModal()"></app-modal>
